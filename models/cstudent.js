@@ -19,11 +19,6 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
         validate: { isEmail: true },
         allowNull: false
-      },
-
-      passwordDigest: {
-        type: DataTypes.STRING,
-        allowNull: false
       }
     },
     {
