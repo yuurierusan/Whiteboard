@@ -1,42 +1,51 @@
 <template>
     <div id="app">
-        <main>
-            <Login :user="user"/>
-            <router-view header="Whiteboard"></router-view>
-        </main>
+        <img alt="Vue logo" src="./assets/logo.jpeg" />
+        <Login
+            :email="email"
+            :password="password"
+            @handleFormChange="handleFormChange"
+            @handleSubmit="handleSubmit" />
+        
     </div>
 </template>
 
 <script>
+import './styles/app.css'
 import Login from './components/Login.vue'
-import { CheckSession } from './services/Auth';
 export default {
     name: 'App',
     components: {
         Login,
     },
     data: () => ({
+        email: '',
+        password: '',
         user: null
     }),
     mounted: function() {
         this.checkToken()
     },
     methods: {
+        handleFormChange(name, value) {
+            this[name] = value
+        },
+        handleSubmit(name, value) {
+            alert('Form Submitted')
+            this[name] = ''
+            this[value] = ''
+        },
         async checkToken() {
-            const response = await CheckSession()
-            this.user = response
-        }
+        const response = await CheckSession()
+        this.user = response
+    }
+    },
 }
-}   
+
 </script>
 
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+img {
+    max-width: 500px;
 }
 </style>
