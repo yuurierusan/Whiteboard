@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
             })
         }
     }
-    course.init(
+    Course.init(
         {
             name: DataTypes.STRING,
             grade: DataTypes.INTEGER,

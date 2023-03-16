@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             })
         }
     }
-    grade.init(
+    Grade.init(
         {
             score: DataTypes.INTEGER,
             letter: DataTypes.STRING,
