@@ -18,6 +18,9 @@ module.exports = (sequelize, DataTypes) => {
         {
             score: DataTypes.INTEGER,
             letter: DataTypes.STRING,
+            studentId: DataTypes.INTEGER,
+            field: 'student_id',
+            reference: { model: 'students', key: 'id' },
         },
         {
             sequelize,

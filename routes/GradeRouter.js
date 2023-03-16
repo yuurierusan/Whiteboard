@@ -13,7 +13,7 @@ Router.get(
     '/:courseId',
     middleware.stripToken,
     middleware.verifyToken,
-    controller.GetGradesById
+    controller.GetGradeById
 )
 
 Router.post(
