@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Course.hasMany(models.Student, {
-        foreignKey: 'courseId'
+      Course.belongsTo(models.Student, {
+        foreignKey: 'studentId'
       })
       Course.hasOne(models.Grade, {
         foreignKey: 'gradeId'
@@ -25,8 +25,13 @@ module.exports = (sequelize, DataTypes) => {
         field: 'student_id',
         reference: { model: 'students', key: 'id' }
       },
-      grade: DataTypes.INTEGER
+      gradeId: {
+        type: DataTypes.STRING,
+        field: 'grade_id',
+        reference: { model: 'grades', key: 'id' }
+      }
     },
+
     {
       sequelize,
       modelName: 'Course',

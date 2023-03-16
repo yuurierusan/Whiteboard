@@ -12,25 +12,11 @@ module.exports = {
       name: { type: Sequelize.STRING, allowNull: false },
       email: {
         type: Sequelize.STRING,
-        allowNull: false,
         unique: true,
-        validate: {
-          isEmail: true
-        }
+        validate: { isEmail: true },
+        allowNull: false
       },
-      course: {
-        type: Sequelize.STRING
-      },
-      gradeId: {
-        type: Sequelize.STRING,
-        field: 'grade_id',
-        reference: { model: 'grades', key: 'id' }
-      },
-      courseId: {
-        type: Sequelize.INTEGER,
-        field: 'course_id',
-        reference: { model: 'courses', key: 'id' }
-      },
+
       passwordDigest: {
         type: Sequelize.STRING,
         allowNull: false

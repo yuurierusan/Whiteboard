@@ -2,30 +2,25 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('courses', {
+    await queryInterface.createTable('studentcourses', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
-      },
-      grade: {
-        type: Sequelize.INTEGER
-      },
-      studentId: {
-        type: Sequelize.INTEGER,
-        field: 'student_id',
-        reference: { model: 'students', key: 'id' }
-      },
-      gradeId: {
+      name: { type: Sequelize.STRING, allowNull: false },
+      email: {
         type: Sequelize.STRING,
-        field: 'grade_id',
-        reference: { model: 'grades', key: 'id' }
+        unique: true,
+        validate: { isEmail: true },
+        allowNull: false
       },
 
+      passwordDigest: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -37,6 +32,6 @@ module.exports = {
     })
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('courses')
+    await queryInterface.dropTable('studentcourses')
   }
 }
