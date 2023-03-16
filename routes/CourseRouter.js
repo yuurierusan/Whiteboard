@@ -10,14 +10,14 @@ Router.get(
 )
 
 Router.get(
-  '/:courseId',
+  '/:id',
   middleware.stripToken,
   middleware.verifyToken,
   controller.GetCourseById
 )
 
 Router.post(
-  '/studentId/:course',
+  '/create',
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateCourse
