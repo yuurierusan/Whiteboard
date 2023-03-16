@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -15,6 +15,11 @@ module.exports = {
       grade: {
         type: Sequelize.INTEGER
       },
+      studentId: {
+        type: Sequelize.INTEGER,
+        field: 'student_id',
+        reference: { model: 'students', key: 'id' }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -23,9 +28,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('courses');
+    await queryInterface.dropTable('courses')
   }
-};
+}

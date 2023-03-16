@@ -6,17 +6,17 @@ router.post('/login', controller.Login)
 router.post('/register', controller.Register)
 
 router.put(
-    '/update/:student_id',
-    middleware.strip,
-    middleware.verifyToken,
-    controller.UpdatePassword
+  '/update/:student_id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.UpdatePassword
 )
 
 router.get(
-    '/session',
-    middleware.stripToken,
-    middleware.verifyToken,
-    controller.CheckSession
+  '/session',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.CheckSession
 )
 
 module.exports = router

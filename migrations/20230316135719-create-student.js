@@ -21,6 +21,16 @@ module.exports = {
       course: {
         type: Sequelize.STRING
       },
+      gradeId: {
+        type: Sequelize.STRING,
+        field: 'grade_id',
+        reference: { model: 'grades', key: 'id' }
+      },
+      courseId: {
+        type: Sequelize.INTEGER,
+        field: 'course_id',
+        reference: { model: 'courses', key: 'id' }
+      },
       passwordDigest: {
         type: Sequelize.STRING,
         allowNull: false
