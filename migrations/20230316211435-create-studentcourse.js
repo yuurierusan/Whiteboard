@@ -9,17 +9,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: { type: Sequelize.STRING, allowNull: false },
-      email: {
-        type: Sequelize.STRING,
-        unique: true,
-        validate: { isEmail: true },
-        allowNull: false
+      studentId: {
+        type: Sequelize.INTEGER
       },
-
-      passwordDigest: {
-        type: Sequelize.STRING,
-        allowNull: false
+      courseId: {
+        type: Sequelize.INTEGER
+      },
+      grade: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
