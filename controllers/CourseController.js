@@ -1,9 +1,13 @@
-const { Course, Student, User } = require('../models')
+const { Course, Student } = require('../models')
 
 const GetAllCourses = async (req, res) => {
   try {
     const courses = await Course.findAll({
-      include: [{ model: Student }]
+      include: {
+        model: Student,
+        as: 'students',
+        through: { attributes: ['grades'] }
+      }
     })
     res.send(courses)
   } catch (e) {
@@ -13,7 +17,14 @@ const GetAllCourses = async (req, res) => {
 
 const GetCourseById = async (req, res) => {
   try {
-    const course = await Course.findByPk(req.params.id, {})
+    const courseId = parseInt(req.params.id)
+    const course = await Course.findByPk(courseId, {
+      include: {
+        model: Student,
+        as: 'students',
+        through: { attributes: ['grades'] }
+      }
+    })
     res.send(course)
   } catch (e) {
     throw e
@@ -23,7 +34,6 @@ const GetCourseById = async (req, res) => {
 const CreateCourse = async (req, res) => {
   try {
     let course = await Course.create(req.body)
-
     res.send(course)
   } catch (e) {
     throw e
@@ -32,9 +42,9 @@ const CreateCourse = async (req, res) => {
 
 const DeleteCourse = async (req, res) => {
   try {
-    let id = +req.params.id
-    await Course.destroy({ where: { id: id } })
-    res.send({ msg: `Deleted course with an ID of ${id}` })
+    let courseId = +req.params.id
+    await Course.destroy({ where: { id: courseId } })
+    res.send({ msg: `Deleted course with an ID of ${courseId}` })
   } catch (e) {
     throw e
   }

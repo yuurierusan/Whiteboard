@@ -1,8 +1,8 @@
-const { Course, User } = require('../models')
+const { User } = require('../models')
 
-const GetAllUsers = async (res) => {
+const GetAllUsers = async (req, res) => {
   try {
-    const user = await User.findAll({})
+    const user = await User.findAll()
     res.send(user)
   } catch (e) {
     throw e
