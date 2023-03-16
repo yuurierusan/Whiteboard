@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <main>
-            <Login />
+            <Login :user="user"/>
             <router-view header="Whiteboard"></router-view>
         </main>
     </div>
