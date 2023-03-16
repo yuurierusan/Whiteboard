@@ -1,6 +1,6 @@
 const { Course, Student, StudentCourse } = require('../models')
 
-const GetAllStudents = async (res) => {
+const GetAllStudents = async (req, res) => {
   try {
     const students = await Student.findAll({
       include: {
@@ -17,8 +17,15 @@ const GetAllStudents = async (res) => {
 
 const GetStudentById = async (req, res) => {
   try {
-    const student = await Student.findByPk(req.params.id, {
-      include: [{ model: Course, include: { model: User } }]
+    const studentId = +req.params.id
+    const student = await Student.findByPk(studentId, {
+      include: [
+        {
+          model: Course,
+          as: 'courses',
+          through: { attributes: ['grade'] }
+        }
+      ]
     })
     res.send(student)
   } catch (e) {
@@ -28,6 +35,7 @@ const GetStudentById = async (req, res) => {
 
 const CreateStudent = async (req, res) => {
   try {
+    const { name, email } = req.body
     let student = await Student.create(req.body)
     res.send(student)
   } catch (e) {
