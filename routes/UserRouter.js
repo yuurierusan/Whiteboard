@@ -1,5 +1,5 @@
 const Router = require('express').Router()
-const controller = require('../controllers/GradeController')
+const controller = require('../controllers/UserController')
 const middleware = require('../middleware')
 
 Router.get(
@@ -14,13 +14,6 @@ Router.get(
   middleware.stripToken,
   middleware.verifyToken,
   controller.GetGradeById
-)
-
-Router.post(
-  '/:studentId/:courseId',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.CreateGradeByCourseId
 )
 
 Router.delete(
