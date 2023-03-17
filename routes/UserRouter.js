@@ -1,26 +1,22 @@
 const Router = require('express').Router()
 const controller = require('../controllers/UserController')
-const middleware = require('../middleware')
 
 Router.get(
   '/all',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.GetAllGrades
+
+  controller.GetAllUsers
 )
 
 Router.get(
-  '/:courseId',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.GetGradeById
+  '/:userId',
+
+  controller.GetUserById
 )
 
 Router.delete(
-  '/:studentId/:courseId',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.DeleteGradeByCourseId
+  '/:studentId/:userId',
+
+  controller.DeleteUser
 )
 
 module.exports = Router

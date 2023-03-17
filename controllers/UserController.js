@@ -1,5 +1,16 @@
 const { User } = require('../models')
 
+const CreateUser = async (req, res) => {
+  try {
+    const { email, password } = req.body
+    const user = await User.create({
+      email,
+      password
+    })
+    res.send(user)
+  } catch (error) {}
+}
+
 const GetAllUsers = async (req, res) => {
   try {
     const user = await User.findAll()
@@ -29,6 +40,7 @@ const DeleteUser = async (req, res) => {
 }
 
 module.exports = {
+  CreateUser,
   GetAllUsers,
   GetUserById,
   DeleteUser

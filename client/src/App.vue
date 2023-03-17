@@ -5,7 +5,8 @@
             :email="email"
             :password="password"
             @handleFormChange="handleFormChange"
-            @handleSubmit="handleSubmit" />
+            @handleSubmit="handleSubmit" 
+            :user="user"/>
         
     </div>
 </template>
@@ -13,6 +14,7 @@
 <script>
 import './styles/app.css'
 import Login from './components/Login.vue'
+
 export default {
     name: 'App',
     components: {
@@ -21,10 +23,11 @@ export default {
     data: () => ({
         email: '',
         password: '',
-        user: null
+        user: false
     }),
     mounted: function() {
-        this.checkToken()
+        
+        
     },
     methods: {
         handleFormChange(name, value) {
@@ -35,12 +38,10 @@ export default {
             this[name] = ''
             this[value] = ''
         },
-        async checkToken() {
-        const response = await CheckSession()
-        this.user = response
+        
     }
-    },
-}
+    }
+
 
 </script>
 
