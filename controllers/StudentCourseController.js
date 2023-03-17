@@ -11,7 +11,7 @@ const GetAllStudentCourses = async (req, res) => {
 
 const GetAllCoursesByStudentId = async (req, res) => {
   try {
-    const studentId = +req.params.id
+    studentId = req.params.id
     const courses = await StudentCourse.findAll({
       where: { studentId: studentId }
     })
