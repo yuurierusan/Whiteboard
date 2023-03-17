@@ -1,5 +1,5 @@
 <template>
-    <div class="form-container">
+    <div class="form-container" >
         <form v-on:submit="handleSubmit">
             <input
                 @input="handleChange"
@@ -19,17 +19,21 @@
 </template>
 
 <script>
+
+
 export default {
     name: 'SignInForm',
     props: {
         email: String,
         password: String,
+        
+
     },
     methods: {
         handleChange(e) {
             this.$emit('handleFormChange', e.target.name, e.target.value)
         },
-        handleSubmit(e) {
+        async handleSubmit(e) {
             e.preventDefault
             this.$emit('handleSubmit')
         },

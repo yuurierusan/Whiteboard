@@ -5,24 +5,9 @@
             :email="email"
             :password="password"
             @handleFormChange="handleFormChange"
-            @handleSubmit="handleSubmit" />
-        <!-- <div class="form-container">
-            <form @submit="handleSubmit">
-                <input
-                    placeholder="Email"
-                    :value="email"
-                    name="email"
-                    type="email"
-                    v-on:input="handleFormChange" />
-                <input
-                    placeholder="Password"
-                    :value="password"
-                    name="password"
-                    type="password"
-                    @input="handleFormChange" />
-                <button>Log In</button>
-            </form>
-        </div> -->
+            @handleSubmit="handleSubmit" 
+            :user="user"/>
+        
     </div>
 </template>
 
@@ -38,7 +23,12 @@ export default {
     data: () => ({
         email: '',
         password: '',
+        user: false
     }),
+    mounted: function() {
+        
+        
+    },
     methods: {
         handleFormChange(name, value) {
             this[name] = value
@@ -48,8 +38,11 @@ export default {
             this[name] = ''
             this[value] = ''
         },
-    },
-}
+        
+    }
+    }
+
+
 </script>
 
 <style>
