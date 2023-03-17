@@ -1,5 +1,13 @@
 <template>
-    <div></div>
+
+<div class="coursecard"></div>
+
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'CoursesPage'
+
+}
+</script>
+
