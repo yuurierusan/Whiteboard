@@ -70,3 +70,23 @@ html {
   button {
     cursor: pointer;
   }
+
+  .add {
+    width: 20%;
+  }
+
+  .courses-card:hover {
+    color: yellow;
+    }
+
+  .about {
+    color: yellow;
+  }
+
+  .course-name {
+    color: yellow;
+  }
+
+  .back {
+    width: 10%;
+  }
