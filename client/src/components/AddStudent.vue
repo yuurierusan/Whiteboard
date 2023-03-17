@@ -5,7 +5,7 @@
       <form v-on:submit.prevent="createStudent">
         <div>
           <label for="name">Name:</label>
-          <input @input="handleChange" v-model="name" name="name" type="text" />
+          <input @input="handleChange" v-model="name" name="name" type="name" />
         </div>
         <div>
           <label for="email">Email:</label>
@@ -19,6 +19,7 @@
 
 <script>
   import axios from 'axios'
+  
 
   export default {
     name: 'AddStudent',
@@ -28,20 +29,24 @@
     }),
     methods: {
       async createStudent() {
-          const response = await axios.post('http://localhost:3001/api/students/create')
-          this.name = response.data.name
-          this.email = response.data.email
+        let newStudent = {
+          name: this.name,
+          email: this.email
+        } 
+          const response = await axios.post('http://localhost:3001/api/students/create', newStudent)
+          console.log(response.data)
+          this.$router.push(`/students`)
       },
       handleChange(event) {
-            this.name = event.target.name
-            this.email = event.target.email
+            this[event.target.name] = event.target.value
+           
         },
-      // async handleSubmit(name, value) {
-      //     this[name] = ''
-      //     this[value] = ''
-      //     this.$emit('handleSubmit')
-      //     this.$router.push(`/students`)
-      // },
+      async handleSubmit() {
+          this.name = ''
+          this.email = ''
+          
+          
+      },
     }
   }
 </script>
