@@ -21,7 +21,22 @@ const GetAllCoursesByStudentId = async (req, res) => {
   }
 }
 
+const AssignStudents = async (req, res) => {
+  try {
+    const { studentId, courseId, grade } = req.body
+    const studentCourse = await StudentCourse.create({
+      studentId: parseInt(studentId),
+      courseId: parseInt(courseId),
+      grade: parseInt(grade)
+    })
+    res.send(studentCourse)
+  } catch (err) {
+    throw err
+  }
+}
+
 module.exports = {
   GetAllStudentCourses,
-  GetAllCoursesByStudentId
+  GetAllCoursesByStudentId,
+  AssignStudents
 }
