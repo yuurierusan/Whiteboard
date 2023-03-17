@@ -6,6 +6,7 @@ import StudentDetails from './pages/StudentDetails'
 import CoursesPage from './pages/CoursesPage'
 import StudentsPage from './pages/StudentsPage'
 import AddStudent from './components/AddStudent'
+import AddCourse from './components/AddCourse'
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: '/addStudent',
     component: AddStudent,
     name: 'AddStudent'
+  },
+  {
+    path: '/addCourse',
+    component: AddCourse,
+    name: 'AddCourse'
   }
 ]
 
