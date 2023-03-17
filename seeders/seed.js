@@ -8,6 +8,10 @@ const userData = [
     },
 ]
 
+const getRandomGrade = () => {
+    return Math.floor(Math.random() * (100 - 50 + 1) + 50)
+}
+
 const courseData = [
     {
         name: 'Mathematics',
@@ -60,10 +64,6 @@ const courseData = [
         grade: getRandomGrade(),
     },
 ]
-
-const getRandomGrade = () => {
-    return Math.floor(Math.random() * (100 - 50 + 1) + 50)
-}
 
 const studentData = [
     {

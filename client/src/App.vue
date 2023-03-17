@@ -1,48 +1,23 @@
 <template>
     <div id="app">
-        <img alt="Vue logo" src="./assets/logo.jpeg" />
-        <Login
-            :email="email"
-            :password="password"
-            @handleFormChange="handleFormChange"
-            @handleSubmit="handleSubmit" 
-            :user="user"/>
-        
+        <header>
+            <NavBar />
+        </header>
+        <main>
+            <router-view header="HomePage"></router-view>
+        </main>
     </div>
 </template>
 
 <script>
 import './styles/app.css'
-import Login from './components/Login.vue'
-
+import NavBar from './components/NavBar.vue'
 export default {
     name: 'App',
     components: {
-        Login,
+        NavBar,
     },
-    data: () => ({
-        email: '',
-        password: '',
-        user: false
-    }),
-    mounted: function() {
-        
-        
-    },
-    methods: {
-        handleFormChange(name, value) {
-            this[name] = value
-        },
-        handleSubmit(name, value) {
-            alert('Form Submitted')
-            this[name] = ''
-            this[value] = ''
-        },
-        
-    }
-    }
-
-
+}
 </script>
 
 <style>

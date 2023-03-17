@@ -7,6 +7,6 @@ Router.get('/:id', controller.GetCourseById)
 
 Router.post('/create', controller.CreateCourse)
 
-Router.delete('/studentId/:course', controller.DeleteCourse)
+Router.delete('/:studentId/:course', controller.DeleteCourse)
 
 module.exports = Router
