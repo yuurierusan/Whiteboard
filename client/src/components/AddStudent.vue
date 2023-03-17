@@ -46,6 +46,7 @@ export default {
                     newStudent
                 )
                 console.log(response.data)
+                this.$router.push('/students')
             } catch (error) {
                 console.log(error)
             }
@@ -56,7 +57,7 @@ export default {
         handleSubmit() {
             this.name = ''
             this.email = ''
-            this.$router.push('/students')
+            
         },
     },
 }

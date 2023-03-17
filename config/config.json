@@ -1,17 +1,19 @@
 {
-    "development": {
-        "database": "whiteboard_portal",
-        "host": "127.0.0.1",
-        "dialect": "postgres"
-    },
-    "test": {
-        "database": "database_test",
-        "host": "127.0.0.1",
-        "dialect": "postgres"
-    },
-    "production": {
-        "database": "database_production",
-        "host": "127.0.0.1",
-        "dialect": "postgres"
-    }
+  "development": {
+    "username": "rafa",
+    "password": "1234",
+    "database": "whiteboard_portal",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
 }
