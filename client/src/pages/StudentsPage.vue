@@ -4,7 +4,7 @@
         <div class="student-card" v-for="student in students" :key="student.id"><h2>{{ student.name }}</h2>
             <p>{{ student.email }}</p>
             <h3 class="coursetext">Courses:</h3>
-            <h3 v-for="course in student.courses" :key="course.id">{{ course.name }} </h3>
+            <h3 v-for="course in student.courses" :key="course.id">{{ course.name }} : {{ course.StudentCourse.grade }} </h3>
             
         </div>
     </div>
@@ -12,6 +12,7 @@
 
 <script>
 import axios from 'axios'
+
 
 export default {
     name: 'StudentPage',
@@ -27,7 +28,7 @@ export default {
             const response = await axios.get('http://localhost:3001/api/students/all')
             console.log(response.data)
             this.students = response.data
-        }
+        },
         
     }
     
