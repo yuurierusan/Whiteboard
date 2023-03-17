@@ -35,7 +35,6 @@ const GetStudentById = async (req, res) => {
 
 const CreateStudent = async (req, res) => {
   try {
-    const { name, email } = req.body
     let student = await Student.create(req.body)
     res.send(student)
   } catch (e) {
