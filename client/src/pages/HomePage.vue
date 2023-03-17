@@ -1,22 +1,36 @@
 <template>
     <div id="app">
-        <header>
-            <NavBar />
-        </header>
-        <main>
-            <router-view header="Whiteboard"></router-view>
-        </main>
-        <Login />
+        <header> </header>
+        <img alt="Whiteboard logo" src="../assets/logo.jpeg" />
+        <Login
+            :email="email"
+            :password="password"
+            @handleFormChange="handleFormChange"
+            @handleSubmit="handleSubmit" />
     </div>
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue'
+import Login from '../components/Login.vue'
 
 export default {
-    name: 'App',
+    name: 'HomePage',
     components: {
-        NavBar,
+        Login,
+    },
+    data: () => ({
+        email: '',
+        password: '',
+    }),
+    mounted: function () {},
+    methods: {
+        handleFormChange(name, value) {
+            this[name] = value
+        },
+        handleSubmit(name, value) {
+            this[name] = ''
+            this[value] = ''
+        },
     },
 }
 </script>

@@ -1,4 +1,5 @@
 <template>
+
 <div class="coursecard"></div>
 
 </template>
@@ -9,3 +10,4 @@ export default {
 
 }
 </script>
+

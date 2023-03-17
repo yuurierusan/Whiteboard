@@ -1,5 +1,5 @@
 <template>
-    <div class="form-container" >
+    <div class="form-container">
         <form v-on:submit="handleSubmit">
             <input
                 @input="handleChange"
@@ -19,23 +19,20 @@
 </template>
 
 <script>
-
-
 export default {
     name: 'SignInForm',
     props: {
         email: String,
         password: String,
-        
-
     },
     methods: {
         handleChange(e) {
             this.$emit('handleFormChange', e.target.name, e.target.value)
         },
         async handleSubmit(e) {
-            e.preventDefault
+            e.preventDefault()
             this.$emit('handleSubmit')
+            this.$router.push(`/courses`)
         },
     },
 }
