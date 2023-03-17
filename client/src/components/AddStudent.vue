@@ -45,6 +45,7 @@ export default {
                     'http://localhost:3001/api/students/create',
                     newStudent
                 )
+                this.$router.push(`/students`)
                 console.log(response.data)
             } catch (error) {
                 console.log(error)
@@ -56,7 +57,6 @@ export default {
         handleSubmit() {
             this.name = ''
             this.email = ''
-            this.$router.push('/students')
         },
     },
 }
