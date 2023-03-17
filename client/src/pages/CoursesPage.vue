@@ -64,3 +64,12 @@ export default {
     },
 }
 </script>
+
+<style>
+    .courses-card {
+        cursor: pointer;
+    }
+    .course-text {
+    color: yellow;
+    }
+</style>

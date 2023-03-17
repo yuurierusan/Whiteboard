@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Welcome to WhiteBoard</h1>
+        <h1 class="about">Welcome to WhiteBoard</h1>
         <h2
             >Welcome to our school's online administration platform! This
             website has been designed to provide our administrators with an

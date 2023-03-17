@@ -5,9 +5,9 @@
       <form v-on:submit.prevent="createCourse">
         <div>
           <label for="name">Name:</label>
-          <input @input="handleChange" v-model="name" name="name" type="name" />
+          <input @input="handleChange" v-model="name" name="name" type="name" placeholder="Course Name" />
         </div>
-        <button type="submit">Add Course</button>
+        <button class="add" type="submit">Add Course</button>
       </form>
     </div>
   </div>
@@ -21,7 +21,6 @@
     name: 'AddCourse',
     data: () => ({
       name: '',
-     
     }),
     methods: {
       async createCourse() {
