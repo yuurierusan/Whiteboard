@@ -1,13 +1,9 @@
 <template>
-
-<div class="coursecard"></div>
-
+    <div class="course-card"></div>
 </template>
 
 <script>
 export default {
-  name: 'CoursesPage'
-
+    name: 'CoursesPage',
 }
 </script>
-

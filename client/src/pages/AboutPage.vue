@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Welcome to WhiteBoard</h1>
-        <h3
+        <h2
             >Welcome to our school's online administration platform! This
             website has been designed to provide our administrators with an
             easy-to-use tool for managing courses, grades, and calculating GPAs
@@ -38,7 +38,7 @@
             please don't hesitate to reach out to our support team. We are here
             to help you get the most out of this powerful tool, and we look
             forward to working with you to ensure that our students receive the
-            best education possible.</h3
+            best education possible.</h2
         >
     </div>
 </template>
