@@ -6,4 +6,6 @@ Router.get('/all', controller.GetAllStudentCourses)
 
 Router.get('/:studentId', controller.GetAllCoursesByStudentId)
 
+Router.post('/create', controller.AssignStudents)
+
 module.exports = Router

@@ -26,8 +26,10 @@ module.exports = (sequelize, DataTypes) => {
         references: {
           model: 'courses',
           key: 'id'
-        },
-        grade: DataTypes.INTEGER,
+        }
+      },
+      grade: {
+        type: DataTypes.INTEGER,
         allowNull: true
       }
     },

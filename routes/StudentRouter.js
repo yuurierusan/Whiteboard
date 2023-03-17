@@ -7,6 +7,8 @@ Router.get(
   controller.GetAllStudents
 )
 
+Router.post('/create', controller.CreateStudent)
+
 Router.get(
   '/:studentId',
 

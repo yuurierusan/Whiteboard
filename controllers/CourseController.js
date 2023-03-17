@@ -1,4 +1,4 @@
-const { Course, Student } = require('../models')
+const { Course, Student, StudentCourses } = require('../models')
 
 const GetAllCourses = async (req, res) => {
   try {
@@ -6,7 +6,7 @@ const GetAllCourses = async (req, res) => {
       include: {
         model: Student,
         as: 'students',
-        through: { attributes: ['grades'] }
+        through: { attributes: ['grade'] }
       }
     })
     res.send(courses)
