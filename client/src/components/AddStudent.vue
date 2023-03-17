@@ -47,6 +47,7 @@ export default {
                 )
                 this.$router.push(`/students`)
                 console.log(response.data)
+                this.$router.push('/students')
             } catch (error) {
                 console.log(error)
             }

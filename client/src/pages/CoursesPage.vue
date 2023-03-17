@@ -45,6 +45,7 @@ export default {
     components: { CourseCard },
     data: () => ({
         courses: [],
+        searchQuery: [],
         searched: false,
     }),
     mounted: function () {
@@ -59,7 +60,7 @@ export default {
         async selectCourse(id) {
             this.$router.push(`/${id}`)
         },
-        async getStudentsFromCourse() {},
+        async getStudentsFromCourses() {},
     },
 }
 </script>
