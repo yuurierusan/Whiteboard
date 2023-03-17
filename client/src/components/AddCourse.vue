@@ -9,9 +9,10 @@
                         @input="handleChange"
                         v-model="name"
                         name="name"
-                        type="name" />
+                        type="name"
+                        placeholder="Course Name" />
                 </div>
-                <button type="submit">Add Course</button>
+                <button class="add" type="submit">Add Course</button>
             </form>
         </div>
     </div>

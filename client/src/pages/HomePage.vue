@@ -2,7 +2,7 @@
     <div id="app">
         <header> </header>
         <div>
-            <img alt="Whiteboard logo" src="../assets/logo.jpeg" />
+            <img class="logo" alt="Whiteboard logo" src="../assets/logo.jpeg" />
             <Login
                 :email="email"
                 :password="password"
@@ -36,3 +36,12 @@ export default {
     },
 }
 </script>
+
+<style>
+.logo {
+    width: 15em;
+    height: 15em;
+    border-radius: 12px;
+    border: 2px solid white;
+}
+</style>

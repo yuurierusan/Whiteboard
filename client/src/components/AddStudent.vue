@@ -9,7 +9,8 @@
                         @input="handleChange"
                         v-model="name"
                         name="name"
-                        type="text" />
+                        type="text" 
+                        placeholder="Student Name"/>
                 </div>
                 <div>
                     <label for="email">Email:</label>
@@ -17,9 +18,11 @@
                         @input="handleChange"
                         v-model="email"
                         email="email"
-                        type="email" />
+                        type="email"
+                        placeholder="Student Email"
+                        />
                 </div>
-                <button type="submit">Add Student</button>
+                <button class="add" type="submit">Add Student</button>
             </form>
         </div>
     </div>
@@ -67,4 +70,5 @@ export default {
 .addstudent {
     color: yellow;
 }
+
 </style>
