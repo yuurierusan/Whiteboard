@@ -43,14 +43,16 @@ export default {
     border: .5vw;
     border-color: yellow;
     border-style: solid;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
+    width: 267.06px;
+    justify-content: center;
+   
     
 }
 .greaterdiv {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
     
 }
 </style>
