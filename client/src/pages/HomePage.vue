@@ -2,15 +2,14 @@
     <div id="app">
         <header> </header>
         <div>
-          <img alt="Whiteboard logo" src="../assets/logo.jpeg" />
-          <Login
-          :email="email"
-          :password="password"
-          @handleFormChange="handleFormChange"
-          @handleSubmit="handleSubmit" />
+            <img alt="Whiteboard logo" src="../assets/logo.jpeg" />
+            <Login
+                :email="email"
+                :password="password"
+                @handleFormChange="handleFormChange"
+                @handleSubmit="handleSubmit" />
         </div>
-        
-      </div>
+    </div>
 </template>
 
 <script>
@@ -20,13 +19,10 @@ export default {
     name: 'HomePage',
     components: {
         Login,
-        
     },
     data: () => ({
         email: '',
         password: '',
-        
-
     }),
     mounted: function () {},
     methods: {
@@ -36,7 +32,6 @@ export default {
         handleSubmit(name, value) {
             this[name] = ''
             this[value] = ''
-            
         },
     },
 }

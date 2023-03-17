@@ -1,48 +1,51 @@
 <template>
-  <div class="addstudent">
-    <h1>Add a Course</h1>
-    <div class="courseform">
-      <form v-on:submit.prevent="createCourse">
-        <div>
-          <label for="name">Name:</label>
-          <input @input="handleChange" v-model="name" name="name" type="name" />
+    <div class="addstudent">
+        <h1>Add a Course</h1>
+        <div class="courseform">
+            <form v-on:submit.prevent="createCourse">
+                <div>
+                    <label for="name">Name:</label>
+                    <input
+                        @input="handleChange"
+                        v-model="name"
+                        name="name"
+                        type="name" />
+                </div>
+                <button type="submit">Add Course</button>
+            </form>
         </div>
-        <button type="submit">Add Course</button>
-      </form>
     </div>
-  </div>
 </template>
 
 <script>
-  import axios from 'axios'
-  
+import axios from 'axios'
 
-  export default {
+export default {
     name: 'AddCourse',
     data: () => ({
-      name: '',
-     
+        name: '',
     }),
     methods: {
-      async createCourse() {
-        let newCourse = {
-          name: this.name,
-          
-        } 
-          const response = await axios.post('http://localhost:3001/api/courses/create', newCourse)
-          console.log(response.data)
-          this.$router.push(`/courses`)
-      },
-      handleChange(event) {
-            this[event.target.name] = event.target.value
-           
+        async createCourse() {
+            let newCourse = {
+                name: this.name,
+            }
+            const response = await axios.post(
+                'http://localhost:3001/api/courses/create',
+                newCourse
+            )
+            console.log(response.data)
+            this.$router.push(`/courses`)
         },
-    }
-  }
+        handleChange(event) {
+            this[event.target.name] = event.target.value
+        },
+    },
+}
 </script>
 
 <style>
-  .addstudent {
+.addstudent {
     color: yellow;
-  }
+}
 </style>
