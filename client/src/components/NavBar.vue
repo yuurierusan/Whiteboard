@@ -4,6 +4,7 @@
         <router-link to="/about" name="AboutPage">About</router-link>
         <router-link to="/students" name="StudentPage">Students</router-link>
         <router-link to="/addStudent" name="AddStudent">Add Student</router-link>
+        
     </nav>
 </template>
 

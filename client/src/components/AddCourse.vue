@@ -2,14 +2,10 @@
   <div class="addstudent">
     <h1>Add a Course</h1>
     <div class="courseform">
-      <form v-on:submit.prevent="createStudent">
+      <form v-on:submit.prevent="createCourse">
         <div>
           <label for="name">Name:</label>
           <input @input="handleChange" v-model="name" name="name" type="name" />
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input @input="handleChange" v-model="email" email="email" type="email" />
         </div>
         <button type="submit">Add Course</button>
       </form>
@@ -28,25 +24,19 @@
      
     }),
     methods: {
-      async createStudent() {
-        let newStudent = {
+      async createCourse() {
+        let newCourse = {
           name: this.name,
           
         } 
-          const response = await axios.post('http://localhost:3001/api/students/create', newStudent)
+          const response = await axios.post('http://localhost:3001/api/courses/create', newCourse)
           console.log(response.data)
-          this.$router.push(`/students`)
+          this.$router.push(`/courses`)
       },
       handleChange(event) {
             this[event.target.name] = event.target.value
            
         },
-      async handleSubmit() {
-          this.name = ''
-          this.email = ''
-          
-          
-      },
     }
   }
 </script>
