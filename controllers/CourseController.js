@@ -22,7 +22,7 @@ const GetCourseById = async (req, res) => {
       include: {
         model: Student,
         as: 'students',
-        through: { attributes: ['grades'] }
+        through: { attributes: ['grade'] }
       }
     })
     res.send(course)

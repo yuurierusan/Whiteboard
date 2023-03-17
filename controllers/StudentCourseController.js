@@ -3,7 +3,7 @@ const { StudentCourse } = require('../models/')
 const GetAllStudentCourses = async (req, res) => {
   try {
     const allCourses = await StudentCourse.findAll()
-    res.send
+    res.send(allCourses)
   } catch (error) {
     throw error
   }
