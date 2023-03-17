@@ -1,12 +1,11 @@
 <template>
     <div class="greaterdiv">
 
-        <div class="student-card" v-for="student in students" :key="student.id" ><h2>{{ student.name }}</h2>
+        <div class="student-card" v-for="student in students" :key="student.id" >
+            <h2>{{ student.name }}</h2>
             <p>{{ student.email }} </p>
 
             <h3 class="coursetext">Courses:</h3>
-            <h2>{{ student.name }}</h2>
-            <p>{{ student.email }}</p>
 
             <h3 > <StudentGPA :student="student" :courses="student.courses"/> </h3>
             
